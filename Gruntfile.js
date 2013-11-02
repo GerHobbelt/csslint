@@ -157,17 +157,23 @@ module.exports = function(grunt) {
         jshint: {
             options: {
                 boss: true,
+                //camelcase: true,
                 curly: true,
                 //eqeqeq: true, TODO: Leaving off due to errors
                 eqnull: true,
                 forin: true,
                 immed: true,
+                //indent: 4,
                 latedef: true,
+                loopfunc: true,
                 newcap: true,
                 noarg: true,
                 noempty: true,
-                rhino: false,
+                plusplus: false,
+                //quotmark: "double",
+                shadow: true,
                 sub: true,
+                trailing: true,
                 undef: true,
                 //unused: true, TODO: Leaving off due to errors around unused instances of CSSLint
                 globals: {
