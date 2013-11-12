@@ -163,7 +163,7 @@ module.exports = function(grunt) {
                 eqnull: true,
                 forin: true,
                 immed: true,
-                //indent: 4,
+                indent: 4,
                 latedef: true,
                 loopfunc: true,
                 newcap: true,
