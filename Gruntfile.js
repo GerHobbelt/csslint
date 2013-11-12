@@ -159,7 +159,7 @@ module.exports = function(grunt) {
                 boss: true,
                 //camelcase: true,
                 curly: true,
-                //eqeqeq: true, TODO: Leaving off due to errors
+                eqeqeq: true,
                 eqnull: true,
                 forin: true,
                 immed: true,

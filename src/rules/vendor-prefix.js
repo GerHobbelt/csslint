@@ -83,7 +83,7 @@ CSSLint.addRule({
         //event handler for beginning of rules
         function startRule(){
             properties = {};
-            num=1;
+            num = 1;
         }
 
         //event handler for end of rules
