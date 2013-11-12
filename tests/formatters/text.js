@@ -21,8 +21,8 @@
 
         "File with problems should list them": function() {
             var result = { messages: [
-                { type: 'warning', line: 1, col: 1, message: 'BOGUS', evidence: 'ALSO BOGUS', rule: [] },
-                { type: 'error', line: 2, col: 1, message: 'BOGUS', evidence: 'ALSO BOGUS', rule: [] }
+                { type: "warning", line: 1, col: 1, message: "BOGUS", evidence: "ALSO BOGUS", rule: [] },
+                { type: "error", line: 2, col: 1, message: "BOGUS", evidence: "ALSO BOGUS", rule: [] }
             ], stats: [] },
                 error1 = "\n1: warning at line 1, col 1\nBOGUS\nALSO BOGUS",
                 error2 = "\n2: error at line 2, col 1\nBOGUS\nALSO BOGUS",
