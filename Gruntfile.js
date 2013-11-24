@@ -175,10 +175,7 @@ module.exports = function(grunt) {
                 sub: true,
                 trailing: true,
                 undef: true,
-                //unused: true, TODO: Leaving off due to errors around unused instances of CSSLint
-                globals: {
-                    jQuery: true
-                }
+                //unused: true,
             },
             gruntfile: {
                 src: "Gruntfile.js"
@@ -187,6 +184,12 @@ module.exports = function(grunt) {
                 src: ["src/**/*.js"]
             },
             tests: {
+                options: {
+                    globals: {
+                        CSSLint: true,
+                        YUITest: true
+                    }
+                },
                 src: ["tests/**/*.js"]
             }
         },
@@ -243,7 +246,7 @@ module.exports = function(grunt) {
 
     //Run the YUITest suite
     grunt.registerMultiTask("yuitest", "Run the YUITests for the project", function() {
-        /*jshint evil:true, node: true */
+        /*jshint evil:true, node:true*/
 
         var start = Date.now();
         var YUITest = require("yuitest");

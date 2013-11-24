@@ -8,7 +8,6 @@
  * to fail due to Java stack overflow. This must be run separate from other tests.
  */
 (function(){
-    /*global YUITest, CSSLint*/
     var Assert = YUITest.Assert,
         suite   = new YUITest.TestSuite("General Tests for all Rules"),
         rules   = CSSLint.getRules(),

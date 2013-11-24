@@ -1,7 +1,8 @@
 /*
  * Windows Script Host Command Line Interface
  */
-/*global ActiveXObject, WScript, Enumerator, cli*/
+/*jshint wsh:true*/
+/*global cli*/
 //TODO: This file needs major cleanup!!!
 
 var wshapi = (function(){
