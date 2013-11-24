@@ -1,4 +1,3 @@
-/*global CSSLint*/
 CSSLint.addFormatter({
     //format information
     id: "text",
@@ -41,7 +40,7 @@ CSSLint.addFormatter({
             shortFilename = filename;
 
         if (pos === -1){
-            pos = filename.lastIndexOf("\\");       
+            pos = filename.lastIndexOf("\\");
         }
         if (pos > -1){
             shortFilename = filename.substring(pos+1);
@@ -58,7 +57,7 @@ CSSLint.addFormatter({
                 output += "\n" + message.evidence;
             }
         });
-    
+
         return output;
     }
 });

@@ -1,7 +1,7 @@
 /*
  * Rule: Don't use universal selector because it's slow.
  */
-/*global CSSLint*/
+
 CSSLint.addRule({
 
     //rule information
@@ -23,7 +23,7 @@ CSSLint.addRule({
 
             for (i=0; i < selectors.length; i++){
                 selector = selectors[i];
-                
+
                 part = selector.parts[selector.parts.length-1];
                 if (part.elementName == "*"){
                     reporter.report(rule.desc, part.line, part.col, rule);

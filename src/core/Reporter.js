@@ -1,4 +1,3 @@
-/*global CSSLint*/
 /**
  * An instance of Report is used to report results of the
  * verification back to the main API.
@@ -31,7 +30,7 @@ function Reporter(lines, ruleset){
      * @type String[]
      */
     this.lines = lines;
-    
+
     /**
      * Information about the rules. Used to determine whether an issue is an
      * error or warning.

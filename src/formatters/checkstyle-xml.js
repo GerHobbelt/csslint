@@ -1,4 +1,3 @@
-/*global CSSLint*/
 (function() {
 
     /**
@@ -17,7 +16,7 @@
         if (!str || str.constructor !== String) {
             return "";
         }
-        
+
         return str.replace(/[\"&><]/g, function(match) {
             switch (match) {
                 case "\"":
@@ -27,7 +26,7 @@
                 case "<":
                     return "&lt;";
                 case ">":
-                    return "&gt;";            
+                    return "&gt;";
             }
         });
     };
@@ -52,7 +51,7 @@
         endFormat: function(){
             return "</checkstyle>";
         },
-        
+
         /**
          * Returns message when there is a file read error.
          * @param {String} filename The name of the file that caused the error.

@@ -1,7 +1,7 @@
 /*
- * Rule: Warn people with approaching the IE 4095 limit 
+ * Rule: Warn people with approaching the IE 4095 limit
  */
-/*global CSSLint*/
+
 CSSLint.addRule({
 
     //rule information
@@ -20,7 +20,7 @@ CSSLint.addRule({
 
         parser.addListener("endstylesheet", function() {
             if (count >= 3800) {
-                reporter.report("You have " + count + " selectors. Internet Explorer supports a maximum of 4095 selectors per stylesheet. Consider refactoring.",0,0,rule); 
+                reporter.report("You have " + count + " selectors. Internet Explorer supports a maximum of 4095 selectors per stylesheet. Consider refactoring.",0,0,rule);
             }
         });
     }
