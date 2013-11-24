@@ -1,3 +1,4 @@
+/*jshint evil:true, node:true*/
 /*global module:false*/
 module.exports = function(grunt) {
 
@@ -246,9 +247,7 @@ module.exports = function(grunt) {
 
     //Run the YUITest suite
     grunt.registerMultiTask("yuitest", "Run the YUITests for the project", function() {
-        /*jshint evil:true, node:true*/
 
-        var start = Date.now();
         var YUITest = require("yuitest");
         var CSSLint = require("./build/csslint-node").CSSLint;
         var files = this.filesSrc;
@@ -400,7 +399,7 @@ module.exports = function(grunt) {
         grunt.util.spawn({
             cmd: "git",
             args: ["tag"]
-        }, function(error, result, code) {
+        }, function(error, result) {
             //Find the latest git tag
             var tags = result.stdout.split("\n"),
                 semver = tags[0].replace("v","").split("."),
@@ -411,7 +410,7 @@ module.exports = function(grunt) {
             //A simple array sort can"t be used because of the comparison of
             //the strings "0.9.9" > "0.9.10"
             for (var i = 1, len = tags.length; i < len; i++) {
-                semver = tags[i].replace("v","").split(".");
+                semver = tags[i].replace("v", "").split(".");
 
                 var currentMajor = parseInt(semver[0], 10);
                 if (currentMajor < major) {
@@ -443,7 +442,7 @@ module.exports = function(grunt) {
             grunt.util.spawn({
                 cmd: "git",
                 args: ["log", "--pretty=format:'* %s (%an)'", lastTag + "..HEAD"]
-            }, function(error, result, code) {
+            }, function(error, result) {
                 var prettyPrint =  result.stdout.split("'\n'").join("\n").replace(/\"$/, "").replace(/^\"/, "");
 
                 grunt.verbose.writeln().write(prettyPrint).writeln();
@@ -471,7 +470,7 @@ module.exports = function(grunt) {
                 cmd: "java",
                 args: ["-jar", "lib/js.jar", "lib/yuitest-rhino-cli.js", "build/csslint.js", filepath],
                 opts: {stdio: "inherit"}
-            }, function(error, result, code) {
+            }, function() {
                 progress--;
                 if (progress === 0) {
                     done();
