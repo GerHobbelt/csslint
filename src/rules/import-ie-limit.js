@@ -26,11 +26,16 @@ CSSLint.addRule({
         
         parser.addListener("import", function(event){
             count++;
-            if (count > MAX_IMPORT_COUNT) {
-                reporter.error("Stylesheet contains > 31 @import. This is not supported in IE6-9.", event.line, event.col, rule);
-            }
         });
 
+        parser.addListener("endstylesheet", function() {
+            if (count > MAX_IMPORT_COUNT) {
+                reporter.rollupError(
+                    "Too many @import rules (" + count + "). IE6-9 supports up to 31 import per stylesheet.", 
+                    rule
+                );
+            }
+        });
     }
 
 });
