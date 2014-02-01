@@ -1,8 +1,7 @@
 /*
  * Rule: Use shorthand properties where possible.
- *
  */
-/*global CSSLint*/
+
 CSSLint.addRule({
 
     //rule information

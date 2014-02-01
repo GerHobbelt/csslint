@@ -157,26 +157,7 @@ module.exports = function(grunt) {
         },
         jshint: {
             options: {
-                boss: true,
-                //camelcase: true,
-                curly: true,
-                eqeqeq: true,
-                eqnull: true,
-                forin: true,
-                immed: true,
-                indent: 4,
-                latedef: true,
-                loopfunc: true,
-                newcap: true,
-                noarg: true,
-                noempty: true,
-                plusplus: false,
-                quotmark: "double",
-                shadow: true,
-                sub: true,
-                trailing: true,
-                undef: true,
-                //unused: true,
+                jshintrc: ".jshintrc"
             },
             gruntfile: {
                 src: "Gruntfile.js"
@@ -407,7 +388,7 @@ module.exports = function(grunt) {
                 minor = parseInt(semver[1], 10),
                 patch = parseInt(semver[2], 10);
 
-            //A simple array sort can"t be used because of the comparison of
+            //A simple array sort can't be used because of the comparison of 
             //the strings "0.9.9" > "0.9.10"
             for (var i = 1, len = tags.length; i < len; i++) {
                 semver = tags[i].replace("v", "").split(".");
@@ -470,7 +451,7 @@ module.exports = function(grunt) {
                 cmd: "java",
                 args: ["-jar", "lib/js.jar", "lib/yuitest-rhino-cli.js", "build/csslint.js", filepath],
                 opts: {stdio: "inherit"}
-            }, function() {
+            }, function(error, result, code) {
                 progress--;
                 if (progress === 0) {
                     done();
